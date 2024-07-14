@@ -1,4 +1,3 @@
-import { getTempEmail, registerPixKey } from './utils'
 import { launch } from "puppeteer";
 
 (async () => {
@@ -12,7 +11,6 @@ import { launch } from "puppeteer";
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   })
 
-  const { email, context } = await getTempEmail(browser);
-  await registerPixKey({ browser, email, tempMailContext: context })
-
+  const page = await browser.newPage();
+  await page.goto('https://mercadopago.com.br/');
 })();
