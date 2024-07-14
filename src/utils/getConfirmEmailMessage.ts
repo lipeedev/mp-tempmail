@@ -12,8 +12,6 @@ export async function getConfirmEmailMessage(context: BrowserContext) {
 
     await page.goto('https://mohmal.com/pt/message/' + msgID)
 
-    await setTimeout(5_000)
-
     await page.waitForSelector('.mail__text-card')
 
     const confirmationCode = await page.$$eval('.mail__text-card', pList => {
