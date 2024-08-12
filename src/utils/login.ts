@@ -4,7 +4,7 @@ import { launch } from "puppeteer";
   const executablePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 
   const browser = await launch({
-    executablePath,
+    executablePath: '/usr/bin/google-chrome',
     userDataDir: './cache',
     headless: false,
     defaultViewport: null,

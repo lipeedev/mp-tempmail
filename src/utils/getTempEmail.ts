@@ -1,13 +1,11 @@
-import { Browser } from "puppeteer";
+import { Page } from "puppeteer";
 
-export async function getTempEmail(browser: Browser) {
-    const url = 'https://mohmal.com/pt/create/random'
-    const context = await browser.createBrowserContext();
-    const page = await context.newPage();
-    await page.goto(url);
+export async function getTempEmail(page: Page) {
+  const url = 'https://mohmal.com/pt/create/random'
+  await page.goto(url);
 
-    await page.waitForSelector('.email')
-    const email = await page.$eval('.email', div => div.innerHTML)
-    
-    return { email, context };
+  await page.waitForSelector('.email')
+  const email = await page.$eval('.email', div => div.innerHTML)
+
+  return { email, page };
 }
