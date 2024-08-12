@@ -9,7 +9,7 @@ import { launch } from "puppeteer";
   }
 
   const browser = await launch({
-    executablePath: '/usr/bin/google-chrome',
+    executablePath,
     userDataDir: './cache',
     headless: false,
     defaultViewport: null,
