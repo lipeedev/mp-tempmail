@@ -20,8 +20,8 @@ export async function registerPixKey({ email, browser, pageOfTempMail }: Registe
 
   await setTimeout(3_000)
 
-  await page.waitForSelector('.bRlvww')
-  await page.click('.bRlvww') // confirming register
+  await page.waitForSelector('.andes-button--progress__label')
+  await page.click('.andes-button--progress__label') // confirming register
 
   await page.waitForSelector('.andes-form-control__field')
   await setTimeout(3_000)
